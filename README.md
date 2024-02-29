@@ -37,11 +37,62 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
-
-
+#### INCLUDE NECESSARY PACKAGES AND LIBRARIES:
+```
+from google.colab import files
+import pandas as pd
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+```
+#### READ THE DATASET :
+```
+df= pd.read_csv('Churn_Modelling (2).csv')
+df
+```
+#### SPLITTING THE SET INTO X & Y:
+```
+X = df.iloc[: ,:-1].values
+X
+y = df.iloc[:,-1].values
+y
+```
+#### PERFORM BASIC OPERATIONS(FILLNA,ISNULL,DUPLICATED,ETC,):
+```
+df.isnull().sum()
+df.fillna(df.mean().round(1),inplace=True)
+df.duplicated()
+```
+#### CONVERT THE COLUMNS WITH STRING VALUES AS NULL :
+```
+df['Surname'] = pd.to_numeric(df['Surname'], errors='coerce')
+df['Geography'] = pd.to_numeric(df['Geography'], errors='coerce')
+df['Gender'] = pd.to_numeric(df['Gender'], errors='coerce')
+```
+#### SCALING THE SET TO NORMALIZE FEATURES
+```
+s = StandardScaler()
+df1= pd.DataFrame(s.fit_transform(df))
+df1
+```
+#### SPLITTING THE SET INTO TRAINING AND TESTING SETS:
+```
+X_train,X_test,Y_train,Y_test = train_test_split(X,y,test_size=0.2)
+X_train
+len(X_train)
+X_test
+len(X_test)
+```
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+#### DATASET :
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/aeeaeca6-29d9-4edf-973a-95b9b86c5fd6)
+#### X & Y:
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/4996be21-499c-464b-bf9a-190b5c9aaf4a)
+
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/ee1c86d5-8367-44d7-b316-1b855b3a8bb8)
+
+#### X TRAIN :
 
 
 ## RESULT:
