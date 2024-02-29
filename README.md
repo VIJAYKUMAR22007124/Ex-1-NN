@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>B VIJAY KUMAR</H3>
+<H3>212222230173</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>29.02.2024</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -51,24 +51,24 @@ from sklearn.model_selection import train_test_split
 df= pd.read_csv('Churn_Modelling (2).csv')
 df
 ```
-#### SPLITTING THE SET INTO X & Y:
-```
-X = df.iloc[: ,:-1].values
-X
-y = df.iloc[:,-1].values
-y
-```
 #### PERFORM BASIC OPERATIONS(FILLNA,ISNULL,DUPLICATED,ETC,):
 ```
 df.isnull().sum()
 df.fillna(df.mean().round(1),inplace=True)
 df.duplicated()
 ```
-#### CONVERT THE COLUMNS WITH STRING VALUES AS NULL :
+#### DROP FEATURES WITH STRING VALUES :
 ```
-df['Surname'] = pd.to_numeric(df['Surname'], errors='coerce')
-df['Geography'] = pd.to_numeric(df['Geography'], errors='coerce')
-df['Gender'] = pd.to_numeric(df['Gender'], errors='coerce')
+df.drop('Geography',axis=1,inplace=True)
+df.drop('Surname',axis=1,inplace=True)
+df.drop('Gender',axis=1,inplace=True)
+```
+#### SPLITTING THE SET INTO X & Y:
+```
+X = df.iloc[: ,:-1].values
+X
+y = df.iloc[:,-1].values
+y
 ```
 #### SCALING THE SET TO NORMALIZE FEATURES
 ```
@@ -87,12 +87,13 @@ len(X_test)
 ## OUTPUT:
 #### DATASET :
 ![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/aeeaeca6-29d9-4edf-973a-95b9b86c5fd6)
+#### NORMALIZED DATASET:
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/3173f1a4-f151-4b52-ba41-59ce68293ae4)
+
 #### X & Y:
-![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/4996be21-499c-464b-bf9a-190b5c9aaf4a)
-
-![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/ee1c86d5-8367-44d7-b316-1b855b3a8bb8)
-
-#### X TRAIN :
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/559f13f1-4106-4599-b958-733b299f4f1b)
+#### X_TRAIN & X_TEST:
+![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/a3321a7a-fbd5-4403-a4f6-4a7bf62c315b)
 
 
 ## RESULT:
