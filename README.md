@@ -27,7 +27,6 @@ Data Preprocessing is the process of making data suitable for use while training
 For achieving better results from the applied model in Machine Learning projects the format of the data has to be in a proper manner. Some specified Machine Learning model needs information in a specified format, for example, Random Forest algorithm does not support null values, therefore to execute random forest algorithm null values have to be managed from the original raw data set.
 Another aspect is that the data set should be formatted in such a way that more than one Machine Learning and Deep Learning algorithm are executed in one data set, and best out of them is chosen.
 
-
 ## ALGORITHM:
 STEP 1:Importing the libraries<BR>
 STEP 2:Importing the dataset<BR>
@@ -89,13 +88,10 @@ len(X_test)
 ![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/aeeaeca6-29d9-4edf-973a-95b9b86c5fd6)
 #### NORMALIZED DATASET:
 ![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/3173f1a4-f151-4b52-ba41-59ce68293ae4)
-
 #### X & Y:
 ![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/559f13f1-4106-4599-b958-733b299f4f1b)
 #### X_TRAIN & X_TEST:
 ![image](https://github.com/VIJAYKUMAR22007124/Ex-1-NN/assets/119657657/a3321a7a-fbd5-4403-a4f6-4a7bf62c315b)
-
-
 ## RESULT:
 Thus, Implementation of Data Preprocessing is done in python  using a data set downloaded from Kaggle.
 
